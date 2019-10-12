@@ -19,10 +19,18 @@ class Login: UIViewController  {
     @IBAction func loginClicked(_ sender: Any) {
         
         
+        if(emailText.text!.count < 1 || passText.text!.count < 1){
+            let alert = UIAlertController(title: "Erro" , message:  "Os campos tem de estar preenchidos", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            
+            self.present(alert, animated: true)
+        }
+        else{
         
-        
-        let key = UIDevice.current.identifierForVendor?.uuidString
-        print(key!)
+        let key = UserDefaults.standard.string(forKey: "IMEI") ?? "571FB4F2-CD06-4678-96EC-B6F376F24B07"
+        print(key)
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://neecapp.neec-fct.com/LoginV2.php")! as URL)
         request.httpMethod = "POST"
@@ -59,10 +67,7 @@ class Login: UIViewController  {
                     }
                     else{
                         let alert = UIAlertController(title: "Erro" , message:  json["mensagem"] as! String, preferredStyle: .alert)
-                        
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        
-                        
                         self.present(alert, animated: true)
                     }
                 }
@@ -72,6 +77,7 @@ class Login: UIViewController  {
             }
         }
         task.resume()
+        }
     }
     
     

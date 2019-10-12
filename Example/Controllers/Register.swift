@@ -21,8 +21,35 @@ class Register: UIViewController  {
     
     @IBAction func registerClicked(_ sender: Any) {
         
+        if( emailText.text!.count < 2 || passText!.text!.count < 2 || passConfirmText!.text!.count < 2){
+            let alert = UIAlertController(title: "Erro", message: "Não podem haver campos vazios", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            
+            self.present(alert, animated: true)
+        }
+            
+            
+        else if(passText.text != passConfirmText.text ){
+            let alert = UIAlertController(title: "Erro", message: "As passwords tem de ser iguais", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            
+            self.present(alert, animated: true)
+        }
+            
+        else if(passText.text!.count < 6 ){
+            let alert = UIAlertController(title: "Erro", message: "As passwords tem de ser maior que 6 caracteres", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            
+            self.present(alert, animated: true)
+        }
         
-        
+        else {
         
         let key = UIDevice.current.identifierForVendor?.uuidString
         print(key!)
@@ -72,6 +99,7 @@ class Register: UIViewController  {
             }
         }
         task.resume()
+        }
     }
     
     override func viewDidLoad() {

@@ -132,7 +132,14 @@
   
             NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey: @"token"];
             NSString * email = [[NSUserDefaults standardUserDefaults] objectForKey: @"email"];
-            NSString * uuid = [[NSUserDefaults standardUserDefaults] objectForKey: @"IMEI"];;
+            NSString * uuid = [[NSUserDefaults standardUserDefaults] objectForKey: @"IMEI"  ];
+           
+ 
+            if(uuid == nil) {
+                // User stored integer value exists.
+                uuid = @"571FB4F2-CD06-4678-96EC-B6F376F24B07";
+            }
+            
             //printf("%s", [uuid UTF8String]);
             
             
