@@ -9,6 +9,29 @@
 #import "MapViewController.h"
 
 
-@implementation MapViewController
+@interface MapViewController ()
 
 @end
+
+@implementation MapViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    NSURL *theURL = [[NSURL alloc] initWithString:@"https://neecapp.neec-fct.com/lista/index.html"];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:theURL]];
+
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+   
+
+  
+}
+
+
+@end
+
