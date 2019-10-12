@@ -229,9 +229,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				en,
 				Base,
+				"pt-PT",
 			);
 			mainGroup = F097AEB01AF7124000187883;
 			productRefGroup = F097AEBA1AF7124000187883 /* Products */;
@@ -416,7 +415,7 @@
 				DEVELOPMENT_TEAM = S4HVWNDNBH;
 				INFOPLIST_FILE = Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ezescaruli.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = neec.fct.porta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -429,7 +428,7 @@
 				DEVELOPMENT_TEAM = S4HVWNDNBH;
 				INFOPLIST_FILE = Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ezescaruli.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = neec.fct.porta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
