@@ -49,6 +49,7 @@ class Register: UIViewController  {
                 print( json["success"]!)
                 DispatchQueue.main.async {
                     if(  json["success"] as! Int == 1){
+                        UserDefaults.standard.set( key, forKey: "IMEI")
                         let alert = UIAlertController(title: "Sucesso", message: "Aguarde para ser aprovado", preferredStyle: .alert)
                         
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
