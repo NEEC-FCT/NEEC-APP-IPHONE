@@ -16,7 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"cargo"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"nome"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"email"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
