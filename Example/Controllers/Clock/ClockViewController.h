@@ -10,4 +10,5 @@
 
 @interface ClockViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end

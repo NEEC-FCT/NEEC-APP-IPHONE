@@ -49,10 +49,12 @@
     [tabBarController setViewController:[[ArchiveViewController alloc] init]
                                 atIndex:0];
     
+    [tabBarController setViewController:[[ClockViewController alloc] init]
+                                atIndex:1];
    
     
     [tabBarController setViewController:[[MapViewController alloc] init]
-                                atIndex:1];
+                                atIndex:3];
     
     [tabBarController setViewController:[[GlobeViewController alloc] init]
                                 atIndex:4];
@@ -100,7 +102,7 @@
                 //printf("%s", [uuid UTF8String]);
                 
                 
-                NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://neecapp.neec-fct.com/portav2.php?"]];
+                NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://neecapp.neec-fct.com/portav2Iphone.php?"]];
                 [request setHTTPMethod:@"POST"];
                 
                 NSString *post =[[NSString alloc] initWithFormat:@"token=%@&cargo=%@&IMEI=%@&email=%@",token,cargo,uuid,email];
@@ -143,7 +145,7 @@
             //printf("%s", [uuid UTF8String]);
             
             
-            NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://neecapp.neec-fct.com/portav2.php?"]];
+            NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://neecapp.neec-fct.com/portav2Iphone.php?"]];
             [request setHTTPMethod:@"POST"];
             
             NSString *post =[[NSString alloc] initWithFormat:@"token=%@&cargo=%@&IMEI=%@&email=%@",token,cargo,uuid,email];
@@ -173,10 +175,7 @@
     
     } atIndex:2];
     
-    [tabBarController setAction:^{
-        [weakSelf showAlertViewWithTitle:@"Brevemente"
-                                 message:@"Ainda a ser desenvolvida"];
-    } atIndex:3];
+
     
 }
 
