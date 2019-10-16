@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     
+    
       NSString * cargo = [[NSUserDefaults standardUserDefaults] objectForKey: @"cargo"];
       NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey: @"token"];
       NSString * email = [[NSUserDefaults standardUserDefaults] objectForKey: @"email"];
